@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Appliance Order</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* appliance-themed background with dark overlay for readability */
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("http://8673442.fs1.hubspotusercontent-na1.net/hubfs/8673442/Immagini%20degli%20articoli/Articoli_Settembre_2022/Copertina_domestic_appliances.jpg") center/cover no-repeat;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .form-box {
+      width: 100%;
+      max-width: 760px;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+      padding: 20px 24px;
+      box-sizing: border-box;
+    }
+
+    .left-side {
+      flex: 1;
+      min-width: 260px;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: white;
+      padding: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .left-side h2 { margin: 0 0 10px; font-size: 28px; }
+    .left-side p { line-height: 1.6; color: #eef3ff; }
+
+    .right-side {
+      width: 100%;
+      padding: 8px 6px 20px 6px;
+      background: #fff;
+    }
+
+    .form-title { margin: 6px 0 4px; font-size: 26px; color:#1e3c72; font-weight:800; display:inline-block; padding:6px 10px; background:rgba(255,255,255,0.9); border-radius:6px; }
+
+    form { display: grid; gap: 12px; }
+
+    .row { display: grid; grid-template-columns: 140px 1fr; align-items: center; gap: 12px; }
+    label { font-weight: bold; color: #333; }
+
+    input, textarea, select {
+      width: 100%; padding: 10px 12px; border: 1px solid #ccc; border-radius: 8px; box-sizing: border-box; font-size: 14px;
+    }
+
+    input:focus, textarea:focus, select:focus { outline: none; border-color: #2a5298; box-shadow: 0 0 6px rgba(42,82,152,0.12); }
+
+    .checkbox-row { display: flex; align-items: center; gap: 8px; color: #444; }
+
+    .submit-btn { width: 100%; padding: 12px; background: #2a5298; color: white; border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; margin-top: 8px; }
+    .submit-btn:hover { background: #1e3c72; }
+
+    .section-header { background:rgba(42,82,152,0.06); padding:10px 12px; border-left:6px solid #2a5298; border-radius:6px; color:#333; font-weight:700; margin-top:6px; margin-bottom:8px; font-size:15px; }
+
+    @media (max-width:720px){ .row { grid-template-columns: 1fr; } label { margin-bottom:6px; } }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <div class="right-side">
+      <h1 class="form-title">Home Appliance Order</h1>
+      <p style="color:#666; margin-top:4px; margin-bottom:10px;">Order appliances, request installation and warranty, and schedule delivery.</p>
+      <form id="orderForm">
+        <div class="section-header">Customer Details</div>
+
+        <div class="row">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+        </div>
+
+        <div class="row">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required />
+        </div>
+
+        <div class="row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="row">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address" rows="2" placeholder="Enter delivery address" required></textarea>
+        </div>
+
+        <div class="section-header">Product Details</div>
+
+        <div class="row">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="">Select category</option>
+            <option>Refrigerator</option>
+            <option>Washing Machine</option>
+            <option>Microwave Oven</option>
+            <option>Air Conditioner</option>
+            <option>Vacuum Cleaner</option>
+            <option>Dishwasher</option>
+            <option>Water Heater / Geyser</option>
+            <option>Mixer Grinder</option>
+            <option>Oven / Stove</option>
+            <option>Air Purifier</option>
+            <option>Chimney</option>
+            <option>Cooler</option>
+            <option>Others</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="brand">Brand</label>
+          <select id="brand" name="brand" required>
+            <option value="">Select brand</option>
+            <option>Samsung</option>
+            <option>LG</option>
+            <option>Bosch</option>
+            <option>Whirlpool</option>
+            <option>IFB</option>
+            <option>Haier</option>
+            <option>Panasonic</option>
+            <option>Godrej</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="model">Model</label>
+          <select id="model" name="model">
+            <option value="">Select model</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="color">Color / Finish</label>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <select id="color" name="color">
+              <option value="">Select color/finish</option>
+              <option>White</option>
+              <option>Silver</option>
+              <option>Stainless Steel</option>
+              <option>Matte Black</option>
+              <option>Glossy Black</option>
+              <option>Champagne</option>
+              <option>Grey</option>
+              <option>Blue</option>
+              <option>Red</option>
+              <option>Custom</option>
+            </select>
+            <input type="text" id="colorOther" name="colorOther" placeholder="Specify other" style="display:none; padding:8px;" />
+          </div>
+        </div>
+
+        <div class="row">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" value="1" />
+        </div>
+
+        <div class="row">
+          <label for="purchaseDate">Purchase Date</label>
+          <input type="date" id="purchaseDate" name="purchaseDate" />
+        </div>
+
+        <div class="section-header">Installation & Warranty</div>
+
+        <div class="row">
+          <label for="installation">Installation</label>
+          <select id="installation" name="installation">
+            <option value="">Select option</option>
+            <option value="yes">Required</option>
+            <option value="no">Not Required</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="warranty">Extended Warranty</label>
+          <select id="warranty" name="warranty">
+            <option>Standard (1 year)</option>
+            <option>Extended (2 years)</option>
+            <option>Extended (3 years)</option>
+          </select>
+        </div>
+
+        <div class="section-header">Delivery & Payment</div>
+
+        <div class="row">
+          <label for="deliveryDate">Delivery Date</label>
+          <input type="date" id="deliveryDate" name="deliveryDate" />
+        </div>
+
+        <div class="row">
+          <label for="deliveryTime">Delivery Time</label>
+          <select id="deliveryTime" name="deliveryTime">
+            <option>Anytime</option>
+            <option>Morning (8am - 12pm)</option>
+            <option>Afternoon (12pm - 4pm)</option>
+            <option>Evening (4pm - 8pm)</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="payment">Payment</label>
+          <select id="payment" name="payment">
+            <option value="">Select payment method</option>
+            <option value="upi">UPI</option>
+            <option value="card">Card</option>
+            <option value="cod">Cash on Delivery</option>
+          </select>
+        </div>
+
+        
+
+        <div class="row">
+          <label for="notes">Additional Notes</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions (e.g., elevator access)"></textarea>
+        </div>
+
+        <div class="checkbox-row" style="margin-top:6px;">
+          <input type="checkbox" id="agree" name="agree" required />
+          <label for="agree">I confirm the order details and accept terms.</label>
+        </div>
+
+        <div style="display:flex; gap:10px;">
+          <button type="submit" class="submit-btn" id="placeBtn" style="flex:1">Place Order</button>
+          <button type="button" id="clearBtn" style="flex:1; background:#fff; border:1px solid #ddd; color:#333; border-radius:8px; font-weight:600; cursor:pointer; padding:10px 12px;">Clear</button>
+        </div>
+      </form>
+
+      <div id="successMsg" style="display:none; text-align:center; margin-top:10px; color:green;">Order placed successfully!</div>
+
+      <script>
+        // brand -> models mapping
+        const brandModels = {
+          'Samsung': ['RT28T3483S/HL (Ref 275L)', 'WA70M5120GS (Washer 7kg)', 'MC28H5015AK (Microwave)'],
+          'LG': ['GN-B247SLUV (Ref 240L)', 'FH0G6ND6 (Washer 6kg)', 'MS2043DB (Microwave)'],
+          'Bosch': ['KDN56VL20I (Ref)', 'WAK24268IN (Washer)', 'HMT75M451B (Microwave)'],
+          'Whirlpool': ['IF8 8S (Washing Machine)', 'INTELLIFRESH (Ref)'],
+          'IFB': ['SENSA (Washer 6kg)', 'ELENA (Washer 7kg)'],
+          'Haier': ['HBD-6200 (Ref)', 'HW60-1279 (Washer)'],
+          'Panasonic': ['NR-BN34 (Ref)', 'NA-F60 (Washer)'],
+          'Godrej': ['RD EDGE 185 (Ref)', 'WE 7.5 (Washer)']
+        };
+
+        const brandEl = document.getElementById('brand');
+        const modelEl = document.getElementById('model');
+
+        function populateModels(brand){
+          modelEl.innerHTML = '<option value="">Select model</option>';
+          if(!brand || !brandModels[brand]) return;
+          brandModels[brand].forEach(m => {
+            const opt = document.createElement('option'); opt.textContent = m; opt.value = m; modelEl.appendChild(opt);
+          });
+        }
+
+        brandEl.addEventListener('change', function(){ populateModels(this.value); });
+
+        // populate models for any pre-selected brand on load
+        document.addEventListener('DOMContentLoaded', function(){
+          if(brandEl.value) populateModels(brandEl.value);
+          else {
+            // optionally populate models for the first brand to show options
+            const first = brandEl.querySelector('option:nth-child(2)');
+            if(first) { brandEl.value = first.textContent; populateModels(first.textContent); brandEl.value = ''; }
+          }
+        });
+
+        document.getElementById('orderForm').addEventListener('submit', function(e){
+          e.preventDefault();
+          // show a simple success message; in production, POST to server
+          document.getElementById('orderForm').style.display = 'none';
+          document.getElementById('successMsg').style.display = 'block';
+        });
+
+        // Clear button resets the form and model list, and shows the form if hidden
+        document.getElementById('clearBtn').addEventListener('click', function(){
+          const form = document.getElementById('orderForm');
+          form.reset();
+          // reset model select to default
+          modelEl.innerHTML = '<option value="">Select model</option>';
+          // hide success and show form if it was hidden
+          document.getElementById('successMsg').style.display = 'none';
+          form.style.display = '';
+          // hide other color input if visible
+          document.getElementById('colorOther').style.display = 'none';
+          document.getElementById('colorOther').value = '';
+        });
+
+        // Show/hide custom color input when "Custom" selected
+        const colorSelect = document.getElementById('color');
+        const colorOther = document.getElementById('colorOther');
+        colorSelect.addEventListener('change', function(){
+          if(this.value === 'Custom') { colorOther.style.display = ''; colorOther.focus(); }
+          else { colorOther.style.display = 'none'; colorOther.value = ''; }
+        });
+
+          // (background upload/reset removed)
+      </script>
+    </div>
+  </div>
+</body>
+</html>
