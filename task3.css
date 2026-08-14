@@ -1,0 +1,16 @@
+.box {
+background-image: url("C:\\Users\\OMESH BHARATH R\\OneDrive\\Pictures\\Screenshots\\Screenshot 2026-02-20 211152.png");
+/*width: 1000px;*/
+height: 1000px;
+background-repeat: no-repeat;
+background-position: center;
+}
+.frontstyling {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.5;
+    font-style: italic;
+    font:300 100px italic "Times New Roman", Times, serif;
+
+}
